@@ -20,7 +20,7 @@ form.addEventListener("submit", function(e){
     };
 
     tareas.push(nuevaTarea); 
-    input.value='';
+    input.value ='';
     input.focus();
     mostrarTareas();
 
@@ -30,9 +30,9 @@ function mostrarTareas(){
     list.innerHTML ='';
     tareas.forEach ((tarea, index) => {
         const li = document.createElement("li");
-        li.className = "todo-list";
-        const divIzquierda = document.createElement("div");
-        divIzquierda.className = "todo-left";
+        li.className = "todo-item";
+        const divIzq = document.createElement("div");
+        divIzq.className = "todo-left";
         const check = document.createElement("input")
         check.type= "checkbox";
         check.checked =tarea.completada;
@@ -55,7 +55,7 @@ function mostrarTareas(){
         divDer.className = "todo-actions";
 
         const btnEliminar = document.createElement("button");
-        btnEliminar.textContent = " "
+        btnEliminar.textContent = "🗑️"
         btnEliminar.addEventListener("click", ()=> {
             tareas.splice(index,1);
             mostrarTareas();
